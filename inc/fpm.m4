@@ -7,7 +7,6 @@
 # sysvmsg sysvsem sysvshm tidy tokenizer wddx xml xmlreader xmlrpc xmlwriter xsl
 # zip
 
-COPY config/php7.ini /usr/local/etc/php/conf.d/
 COPY config/fpm/php-fpm.conf /usr/local/etc/
 COPY config/fpm/pool.d /usr/local/etc/pool.d
 
