@@ -108,7 +108,8 @@ RUN set -xe \
             | sort -u \
             | awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }' \
         )" \
-    && apk add --no-cache --virtual .phpexts-rundeps $runDeps
+    && apk add --no-cache --virtual .phpexts-rundeps $runDeps \
+    && mkdir -m 777 -p /home/user
 
 # Copy configuration
 COPY config/php7.ini /usr/local/etc/php/conf.d/
